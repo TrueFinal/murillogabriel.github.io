@@ -1,31 +1,37 @@
 import React from 'react';
-import { Download, MapPin, Calendar, Mail } from 'lucide-react';
+import { Code, Zap, MessageCircle, ArrowRight } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    'JavaScript/TypeScript', 'React/Next.js', 'Node.js', 'Python',
-    'WhatsApp API', 'Automation Tools', 'Web Scraping', 'API Integration',
-    'Database Design', 'Cloud Services', 'UI/UX Design', 'Project Management'
+    {
+      category: 'Desenvolvimento Web',
+      items: ['React', 'TypeScript', 'Node.js', 'Next.js', 'Tailwind CSS']
+    },
+    {
+      category: 'Automação',
+      items: ['WhatsApp API', 'Zapier', 'Integromat', 'Python', 'JavaScript']
+    },
+    {
+      category: 'Ferramentas & Tecnologias',
+      items: ['Git', 'Docker', 'AWS', 'MongoDB', 'PostgreSQL']
+    }
   ];
 
-  const experience = [
+  const services = [
     {
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      period: '2022 - Present',
-      description: 'Leading development of enterprise web applications and automation systems'
+      icon: Code,
+      title: 'Desenvolvimento Web',
+      description: 'Criação de sites e aplicações web modernas, responsivas e otimizadas para SEO.'
     },
     {
-      title: 'Automation Specialist',
-      company: 'Digital Agency',
-      period: '2020 - 2022',
-      description: 'Created custom automation solutions for small and medium businesses'
+      icon: Zap,
+      title: 'Automação de Processos',
+      description: 'Soluções personalizadas para automatizar tarefas repetitivas e otimizar fluxos de trabalho.'
     },
     {
-      title: 'Web Developer',
-      company: 'Freelance',
-      period: '2018 - 2020',
-      description: 'Built responsive websites and web applications for various clients'
+      icon: MessageCircle,
+      title: 'Bots de WhatsApp',
+      description: 'Desenvolvimento de bots inteligentes para WhatsApp que melhoram o atendimento ao cliente.'
     }
   ];
 
@@ -35,117 +41,106 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            About Me
+            Sobre Mim
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Passionate developer with a focus on creating innovative solutions that drive business growth
+            Desenvolvedor Full Stack apaixonado por criar soluções inovadoras que transformam negócios
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
-          {/* Main Content */}
-          <div className="lg:col-span-2 space-y-12">
-            {/* Bio */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
-              <h2 className="text-2xl font-bold text-white mb-6">My Story</h2>
-              <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>
-                  With over 5 years of experience in web development and automation, I've helped dozens of 
-                  businesses streamline their operations and expand their digital presence. My journey started 
-                  with a simple passion for solving complex problems through code.
-                </p>
-                <p>
-                  I specialize in creating custom automation solutions, particularly WhatsApp bots and workflow 
-                  automation systems that save businesses time and money. My approach combines technical expertise 
-                  with a deep understanding of business needs.
-                </p>
-                <p>
-                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source 
-                  projects, or helping other developers grow their skills through mentoring and knowledge sharing.
-                </p>
-              </div>
+        {/* Main Content */}
+        <div className="grid md:grid-cols-2 gap-12 mb-20">
+          {/* Left Column - About Text */}
+          <div className="space-y-6">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <h2 className="text-2xl font-bold text-white mb-4">Minha Jornada</h2>
+              <p className="text-gray-300 leading-relaxed">
+                Com mais de 5 anos de experiência em desenvolvimento web e automação, tenho ajudado empresas a 
+                transformar suas operações através de soluções tecnológicas inovadoras. Minha especialidade está 
+                em criar sistemas que não apenas resolvem problemas, mas também impulsionam o crescimento dos negócios.
+              </p>
             </div>
 
-            {/* Experience */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
-              <h2 className="text-2xl font-bold text-white mb-6">Experience</h2>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <h2 className="text-2xl font-bold text-white mb-4">Minha Abordagem</h2>
+              <p className="text-gray-300 leading-relaxed">
+                Acredito em uma abordagem colaborativa, trabalhando em estreita colaboração com meus clientes para 
+                entender suas necessidades específicas. Cada projeto é único, e me dedico a criar soluções 
+                personalizadas que atendam perfeitamente aos objetivos do seu negócio.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - Skills */}
+          <div className="space-y-6">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+              <h2 className="text-2xl font-bold text-white mb-6">Habilidades & Tecnologias</h2>
               <div className="space-y-6">
-                {experience.map((job, index) => (
-                  <div key={index} className="border-l-2 border-blue-400 pl-6">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                      <h3 className="text-lg font-semibold text-white">{job.title}</h3>
-                      <span className="text-blue-400 text-sm">{job.period}</span>
+                {skills.map((skillGroup, index) => (
+                  <div key={index}>
+                    <h3 className="text-lg font-semibold text-white mb-3">{skillGroup.category}</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {skillGroup.items.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="px-3 py-1 bg-white/10 text-white rounded-full text-sm"
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
-                    <p className="text-teal-400 mb-2">{job.company}</p>
-                    <p className="text-gray-300">{job.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Skills */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8">
-              <h2 className="text-2xl font-bold text-white mb-6">Skills & Technologies</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {skills.map((skill, index) => (
-                  <div key={index} className="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-center">
-                    <span className="text-gray-300 text-sm">{skill}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Sidebar */}
-          <div className="space-y-8">
-            {/* Contact Info */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-white mb-4">Quick Info</h3>
-              <div className="space-y-3">
-                <div className="flex items-center text-gray-300">
-                  <MapPin className="h-5 w-5 mr-3 text-blue-400" />
-                  <span>New York, NY</span>
-                </div>
-                <div className="flex items-center text-gray-300">
-                  <Calendar className="h-5 w-5 mr-3 text-blue-400" />
-                  <span>Available for hire</span>
-                </div>
-                <div className="flex items-center text-gray-300">
-                  <Mail className="h-5 w-5 mr-3 text-blue-400" />
-                  <span>hello@portfolio.com</span>
-                </div>
-              </div>
-            </div>
+        {/* Services Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">O Que Eu Faço</h2>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              Serviços especializados para impulsionar seu negócio com tecnologia
+            </p>
+          </div>
 
-            {/* Download Resume */}
-            <div className="bg-gradient-to-r from-blue-600/20 to-teal-600/20 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
-              <h3 className="text-xl font-bold text-white mb-4">Resume</h3>
-              <p className="text-gray-300 mb-6">
-                Download my complete resume for more details about my experience and skills.
-              </p>
-              <button className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center w-full group">
-                <Download className="h-5 w-5 mr-2 group-hover:translate-y-1 transition-transform" />
-                Download Resume
-              </button>
-            </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+                  <p className="text-gray-300 mb-4">{service.description}</p>
+                  <a href="/services" className="text-blue-400 hover:text-blue-300 flex items-center group">
+                    Saiba mais
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
-            {/* Stats */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-white mb-4">Stats</h3>
-              <div className="space-y-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">50+</div>
-                  <div className="text-gray-300 text-sm">Projects Completed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-teal-400">30+</div>
-                  <div className="text-gray-300 text-sm">Happy Clients</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-400">5+</div>
-                  <div className="text-gray-300 text-sm">Years Experience</div>
-                </div>
-              </div>
+        {/* CTA Section */}
+        <div className="text-center">
+          <div className="bg-gradient-to-r from-blue-600/20 to-teal-600/20 backdrop-blur-sm border border-white/10 rounded-2xl p-12">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Vamos Trabalhar Juntos
+            </h2>
+            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+              Pronto para transformar seu negócio com soluções tecnológicas inovadoras? Vamos conversar sobre seu projeto.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/contact" className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200">
+                Entre em Contato
+              </a>
+              <a href="/projects" className="border border-white/20 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-200">
+                Ver Projetos
+              </a>
             </div>
           </div>
         </div>

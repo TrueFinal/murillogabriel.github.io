@@ -5,60 +5,60 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      title: 'WhatsApp Automation Bot',
-      description: 'Custom WhatsApp bot that handles customer inquiries, processes orders, and manages your business communication 24/7.',
-      price: '$499',
-      originalPrice: '$699',
-      duration: '2-3 weeks delivery',
+      title: 'Bot de Automação WhatsApp',
+      description: 'Bot personalizado do WhatsApp que gerencia consultas de clientes, processa pedidos e administra a comunicação do seu negócio 24/7.',
+      price: 'R$ 2.499',
+      originalPrice: 'R$ 3.499',
+      duration: 'Entrega em 2-3 semanas',
       popular: true,
       features: [
-        'Custom bot development',
-        'Automated customer responses',
-        'Order processing integration',
-        'Customer data management',
-        'Multi-language support',
-        '30 days free support',
-        'Setup and training included'
+        'Desenvolvimento personalizado do bot',
+        'Respostas automáticas para clientes',
+        'Integração com processamento de pedidos',
+        'Gerenciamento de dados dos clientes',
+        'Suporte a múltiplos idiomas',
+        '30 dias de suporte gratuito',
+        'Configuração e treinamento incluídos'
       ],
       icon: MessageCircle,
       color: 'from-green-600 to-emerald-600'
     },
     {
       id: 2,
-      title: 'Business Website + Automation',
-      description: 'Complete business website with integrated automation tools to streamline your operations and boost productivity.',
-      price: '$899',
-      originalPrice: '$1299',
-      duration: '3-4 weeks delivery',
+      title: 'Site Empresarial + Automação',
+      description: 'Site empresarial completo com ferramentas de automação integradas para otimizar suas operações e aumentar a produtividade.',
+      price: 'R$ 4.499',
+      originalPrice: 'R$ 6.499',
+      duration: 'Entrega em 3-4 semanas',
       popular: false,
       features: [
-        'Modern responsive website',
-        'Contact form automation',
-        'Lead management system',
-        'Email automation setup',
-        'SEO optimization',
-        'Mobile-friendly design',
-        '60 days free support'
+        'Site responsivo moderno',
+        'Automação de formulário de contato',
+        'Sistema de gerenciamento de leads',
+        'Configuração de automação de e-mail',
+        'Otimização SEO',
+        'Design mobile-friendly',
+        '60 dias de suporte gratuito'
       ],
       icon: Code,
       color: 'from-blue-600 to-indigo-600'
     },
     {
       id: 3,
-      title: 'Custom Workflow Automation',
-      description: 'Tailored automation solutions to eliminate repetitive tasks and optimize your business processes.',
-      price: '$1299',
-      originalPrice: '$1899',
-      duration: '4-6 weeks delivery',
+      title: 'Automação de Fluxo de Trabalho',
+      description: 'Soluções de automação personalizadas para eliminar tarefas repetitivas e otimizar seus processos de negócios.',
+      price: 'R$ 6.499',
+      originalPrice: 'R$ 9.499',
+      duration: 'Entrega em 4-6 semanas',
       popular: false,
       features: [
-        'Process analysis and design',
-        'Custom automation development',
-        'Third-party integrations',
-        'Data synchronization',
-        'Performance monitoring',
-        'Staff training included',
-        '90 days free support'
+        'Análise e design de processos',
+        'Desenvolvimento de automação personalizada',
+        'Integrações com terceiros',
+        'Sincronização de dados',
+        'Monitoramento de desempenho',
+        'Treinamento da equipe incluído',
+        '90 dias de suporte gratuito'
       ],
       icon: Zap,
       color: 'from-purple-600 to-pink-600'
@@ -68,20 +68,20 @@ const Services = () => {
   const testimonials = [
     {
       name: 'Sarah Johnson',
-      company: 'Digital Marketing Agency',
-      text: 'The WhatsApp bot transformed our customer service. We now handle 3x more inquiries with the same team size.',
+      company: 'Agência de Marketing Digital',
+      text: 'O bot do WhatsApp transformou nosso atendimento ao cliente. Agora atendemos 3x mais consultas com a mesma equipe.',
       rating: 5
     },
     {
       name: 'Mike Chen',
-      company: 'E-commerce Store',
-      text: 'Incredible work on our website and automation setup. Sales increased by 40% in the first month!',
+      company: 'Loja E-commerce',
+      text: 'Trabalho incrível em nosso site e configuração de automação. As vendas aumentaram 40% no primeiro mês!',
       rating: 5
     },
     {
       name: 'Lisa Rodriguez',
-      company: 'Consulting Firm',
-      text: 'The custom workflow automation saved us 20+ hours per week. Best investment we made this year.',
+      company: 'Empresa de Consultoria',
+      text: 'A automação de fluxo de trabalho nos economizou mais de 20 horas por semana. Melhor investimento que fizemos este ano.',
       rating: 5
     }
   ];
@@ -92,10 +92,10 @@ const Services = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Services & Solutions
+            Serviços & Soluções
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Professional automation and development services to transform your business operations
+            Serviços profissionais de automação e desenvolvimento para transformar as operações do seu negócio
           </p>
         </div>
 
@@ -108,7 +108,7 @@ const Services = () => {
                 {service.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                      Most Popular
+                      Mais Popular
                     </span>
                   </div>
                 )}
@@ -138,7 +138,7 @@ const Services = () => {
                 </ul>
 
                 <button className={`w-full bg-gradient-to-r ${service.color} hover:scale-105 text-white py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center group`}>
-                  Order Now
+                  Pedir Agora
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -150,19 +150,19 @@ const Services = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              How It Works
+              Como Funciona
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Simple 4-step process to get your automation solution up and running
+              Processo simples de 4 etapas para colocar sua solução de automação em funcionamento
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { step: '01', title: 'Consultation', desc: 'We discuss your needs and requirements' },
-              { step: '02', title: 'Planning', desc: 'Create a detailed project plan and timeline' },
-              { step: '03', title: 'Development', desc: 'Build and test your custom solution' },
-              { step: '04', title: 'Launch', desc: 'Deploy, train your team, and provide support' }
+              { step: '01', title: 'Consulta', desc: 'Discutimos suas necessidades e requisitos' },
+              { step: '02', title: 'Planejamento', desc: 'Criamos um plano detalhado do projeto e cronograma' },
+              { step: '03', title: 'Desenvolvimento', desc: 'Construímos e testamos sua solução personalizada' },
+              { step: '04', title: 'Lançamento', desc: 'Implantamos, treinamos sua equipe e fornecemos suporte' }
             ].map((item, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -179,10 +179,10 @@ const Services = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Client Success Stories
+              Histórias de Sucesso
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              See what my clients say about the results they've achieved
+              Veja o que nossos clientes dizem sobre os resultados que alcançaram
             </p>
           </div>
 
@@ -208,17 +208,17 @@ const Services = () => {
         <div className="text-center">
           <div className="bg-gradient-to-r from-blue-600/20 to-teal-600/20 backdrop-blur-sm border border-white/10 rounded-2xl p-12">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Automate Your Business?
+              Pronto para Automatizar seu Negócio?
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Let's discuss your specific needs and create a custom solution that drives real results for your business.
+              Vamos discutir suas necessidades específicas e criar uma solução personalizada que gere resultados reais para seu negócio.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact" className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200">
-                Get Free Consultation
+                Agendar Consulta Gratuita
               </a>
               <a href="/projects" className="border border-white/20 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-200">
-                View Portfolio
+                Ver Portfólio
               </a>
             </div>
           </div>

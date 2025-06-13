@@ -1,109 +1,116 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Code, Zap, Shield } from 'lucide-react';
+import { ArrowRight, Code, Zap, MessageCircle } from 'lucide-react';
 
 const Home = () => {
+  const services = [
+    {
+      icon: Code,
+      title: 'Desenvolvimento Web',
+      description: 'Criação de sites e aplicações web modernas, responsivas e otimizadas para SEO.'
+    },
+    {
+      icon: Zap,
+      title: 'Automação de Processos',
+      description: 'Soluções personalizadas para automatizar tarefas repetitivas e otimizar fluxos de trabalho.'
+    },
+    {
+      icon: MessageCircle,
+      title: 'Bots de WhatsApp',
+      description: 'Desenvolvimento de bots inteligentes para WhatsApp que melhoram o atendimento ao cliente.'
+    }
+  ];
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="pt-20 pb-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Building Digital
-              <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-                {" "}Solutions
-              </span>
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              I'm a passionate developer specializing in automation, web development, and digital solutions. 
-              Let me help you streamline your business with cutting-edge technology.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/services"
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center group"
-              >
-                View Services
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link
-                to="/projects"
-                className="border border-white/20 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-200"
-              >
-                See My Work
-              </Link>
-            </div>
+    <div className="min-h-screen pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        {/* Hero Section */}
+        <div className="text-center mb-20">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Transformando Negócios com{' '}
+            <span className="bg-gradient-to-r from-blue-400 to-teal-400 text-transparent bg-clip-text">
+              Tecnologia
+            </span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Desenvolvedor Full Stack especializado em criar soluções inovadoras que impulsionam o crescimento do seu negócio
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact"
+              className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200"
+            >
+              Começar Projeto
+            </a>
+            <a
+              href="/projects"
+              className="border border-white/20 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-200"
+            >
+              Ver Projetos
+            </a>
           </div>
         </div>
-      </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              What I Offer
-            </h2>
+        {/* Services Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-white mb-4">Meus Serviços</h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Comprehensive digital solutions tailored to your business needs
+              Soluções tecnológicas personalizadas para impulsionar seu negócio
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300">
-              <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
-                <Code className="h-6 w-6 text-blue-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Web Development</h3>
-              <p className="text-gray-300">
-                Modern, responsive websites and web applications built with the latest technologies
-              </p>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300">
-              <div className="w-12 h-12 bg-teal-500/20 rounded-lg flex items-center justify-center mb-6">
-                <Zap className="h-6 w-6 text-teal-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Automation</h3>
-              <p className="text-gray-300">
-                WhatsApp bots, workflow automation, and custom solutions to streamline your operations
-              </p>
-            </div>
-
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300">
-              <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-6">
-                <Shield className="h-6 w-6 text-orange-400" />
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-4">Consulting</h3>
-              <p className="text-gray-300">
-                Strategic technology consulting to help you make informed decisions about your digital presence
-              </p>
-            </div>
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div
+                  key={index}
+                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-teal-600 rounded-lg flex items-center justify-center mb-4">
+                    <Icon className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
+                  <p className="text-gray-300 mb-4">{service.description}</p>
+                  <a
+                    href="/services"
+                    className="text-blue-400 hover:text-blue-300 flex items-center group"
+                  >
+                    Saiba mais
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+        {/* CTA Section */}
+        <div className="text-center">
           <div className="bg-gradient-to-r from-blue-600/20 to-teal-600/20 backdrop-blur-sm border border-white/10 rounded-2xl p-12">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
+              Pronto para Transformar seu Negócio?
             </h2>
-            <p className="text-gray-300 text-lg mb-8">
-              Let's discuss how I can help you achieve your goals with custom digital solutions
+            <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+              Vamos discutir como posso ajudar a impulsionar seu negócio com soluções tecnológicas inovadoras
             </p>
-            <Link
-              to="/contact"
-              className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 inline-flex items-center group"
-            >
-              Get In Touch
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200"
+              >
+                Entre em Contato
+              </a>
+              <a
+                href="/about"
+                className="border border-white/20 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-200"
+              >
+                Sobre Mim
+              </a>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

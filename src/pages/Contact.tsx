@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Clock, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, MessageCircle, Loader2 } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,18 +10,42 @@ const Contact = () => {
     service: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You would typically send this to your backend or email service
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      setSubmitStatus({
+        type: 'success',
+        message: 'Mensagem enviada com sucesso! Entrarei em contato em breve.'
+      });
+      setFormData({ name: '', email: '', subject: '', message: '', service: '' });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
   const contactInfo = [
@@ -66,10 +90,10 @@ const Contact = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Let's Work Together
+            Entre em Contato
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Ready to transform your business with automation? Get in touch and let's discuss your project.
+            Vamos discutir como posso ajudar a transformar seu negócio com soluções tecnológicas inovadoras
           </p>
         </div>
 
@@ -79,14 +103,24 @@ const Contact = () => {
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               <div className="flex items-center mb-6">
                 <MessageCircle className="h-6 w-6 text-blue-400 mr-3" />
-                <h2 className="text-2xl font-bold text-white">Send Message</h2>
+                <h2 className="text-2xl font-bold text-white">Envie uma Mensagem</h2>
               </div>
+
+              {submitStatus.type && (
+                <div className={`mb-6 p-4 rounded-lg ${
+                  submitStatus.type === 'success' 
+                    ? 'bg-green-500/20 text-green-300' 
+                    : 'bg-red-500/20 text-red-300'
+                }`}>
+                  {submitStatus.message}
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Your Name *
+                      Nome *
                     </label>
                     <input
                       type="text"
@@ -96,13 +130,13 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors"
-                      placeholder="John Doe"
+                      placeholder="Seu nome"
                     />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Email Address *
+                      Email *
                     </label>
                     <input
                       type="email"
@@ -112,14 +146,14 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors"
-                      placeholder="john@example.com"
+                      placeholder="seu@email.com"
                     />
                   </div>
                 </div>
 
                 <div>
                   <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
-                    Service Interested In
+                    Serviço de Interesse
                   </label>
                   <select
                     id="service"
@@ -128,7 +162,7 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors"
                   >
-                    <option value="">Select a service</option>
+                    <option value="">Selecione um serviço</option>
                     {services.map((service, index) => (
                       <option key={index} value={service} className="bg-gray-800">
                         {service}
@@ -139,7 +173,7 @@ const Contact = () => {
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                    Subject *
+                    Assunto *
                   </label>
                   <input
                     type="text"
@@ -149,13 +183,13 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors"
-                    placeholder="Project inquiry"
+                    placeholder="Assunto da mensagem"
                   />
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                    Message *
+                    Mensagem *
                   </label>
                   <textarea
                     id="message"
@@ -165,16 +199,26 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-colors resize-none"
-                    placeholder="Tell me about your project requirements..."
+                    placeholder="Sua mensagem..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center group"
+                  disabled={isSubmitting}
+                  className="w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                      Enviar Mensagem
+                    </>
+                  )}
                 </button>
               </form>
             </div>
@@ -203,7 +247,7 @@ const Contact = () => {
 
             {/* FAQ */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-white mb-4">Quick FAQ</h3>
+              <h3 className="text-xl font-bold text-white mb-4">FAQ Rápida</h3>
               <div className="space-y-4">
                 <div>
                   <h4 className="text-white font-medium mb-2">How quickly can you start?</h4>
