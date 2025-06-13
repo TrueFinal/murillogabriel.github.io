@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/murillogabriel.github.io/', // Update this to match your repository name
+  base: '/', // Changed back to '/' for GitHub Pages deployment
 });
