@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: './', // This ensures relative paths for GitHub Pages
+  base: '/', // Changed from './' to '/' for HashRouter
 });
