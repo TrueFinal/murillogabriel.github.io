@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/', // Changed from './' to '/' for HashRouter
+  base: '/murillogabriel.github.io/', // Update this to match your repository name
 });
