@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/murillogabriel.github.io/', // Update to match your repository name
+  base: '/',
 });
