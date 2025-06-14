@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Um minutinho...</title>
+    <script>
+      // Always use the full project path for redirection
+      var projectBase = 'https://truefinal.github.io/murillogabriel.github.io';
+      var path = window.location.pathname.replace(projectBase, '');
+      if (path && path !== '/') {
+        window.location.replace(projectBase + '/#' + path + window.location.search + window.location.hash);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Um minutinho...</h1>
+  </body>
+</html> 
