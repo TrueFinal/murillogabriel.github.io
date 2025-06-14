@@ -52,36 +52,36 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@portfolio.com',
-      description: 'Send me an email anytime!'
+      value: 'murillogyn2023@gmail.com',
+      description: 'Me contate por este e-mail!'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      description: 'Call me for urgent matters'
+      value: '+55 62 99538-8504',
+      description: 'Para assuntos urgentes, me chame no WhatsApp!'
     },
     {
       icon: MapPin,
-      title: 'Location',
-      value: 'New York, NY',
-      description: 'Available for local meetings'
+      title: 'Localização',
+      value: 'Goiânia, GO',
+      description: 'Estou localizado em Goiânia, Goiás, Brasil, para reuniões presenciais.'
     },
     {
       icon: Clock,
-      title: 'Response Time',
-      value: '< 24 hours',
-      description: 'I respond quickly to all inquiries'
+      title: 'Tempo de Resposta',
+      value: 'Menos de 24 horas',
+      description: 'Resposta rápida para as suas perguntas!'
     }
   ];
 
   const services = [
-    'WhatsApp Automation Bot',
-    'Business Website Development',
-    'Custom Workflow Automation',
-    'API Integration',
-    'Consulting & Strategy',
-    'Other (Please specify)'
+    'Desenvolvimento de Sites',
+    'Automação de Processos',
+    'Bots de WhatsApp',
+    'Integração de APIs',
+    'Consultoria e Estratégia',
+    'Outros (Por favor, especifique)'
   ];
 
   return (
@@ -250,16 +250,16 @@ const Contact = () => {
               <h3 className="text-xl font-bold text-white mb-4">FAQ Rápida</h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="text-white font-medium mb-2">How quickly can you start?</h4>
-                  <p className="text-gray-300 text-sm">Most projects can begin within 1-2 weeks of agreement.</p>
+                  <h4 className="text-white font-medium mb-2">Quanto tempo leva para começar um projeto?</h4>
+                  <p className="text-gray-300 text-sm">A maioria dos projetos pode começar dentro de 1-2 semanas após o acordo.</p>
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-2">Do you offer payment plans?</h4>
-                  <p className="text-gray-300 text-sm">Yes, I offer flexible payment options for larger projects.</p>
+                  <h4 className="text-white font-medium mb-2">Você oferece planos de pagamento?</h4>
+                  <p className="text-gray-300 text-sm">Sim, ofereço opções de pagamento flexíveis para projetos maiores.</p>
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-2">What's included in support?</h4>
-                  <p className="text-gray-300 text-sm">All projects include free support and minor updates for 30-90 days.</p>
+                  <h4 className="text-white font-medium mb-2">O que está incluído no suporte?</h4>
+                  <p className="text-gray-300 text-sm">Todos os projetos incluem suporte gratuito e atualizações menores por 30-90 dias.</p>
                 </div>
               </div>
             </div>
@@ -267,9 +267,9 @@ const Contact = () => {
             {/* Availability */}
             <div className="bg-gradient-to-r from-green-600/20 to-emerald-600/20 backdrop-blur-sm border border-green-500/20 rounded-xl p-6 text-center">
               <div className="w-3 h-3 bg-green-400 rounded-full mx-auto mb-3 animate-pulse"></div>
-              <h3 className="text-lg font-bold text-white mb-2">Available for New Projects</h3>
+              <h3 className="text-lg font-bold text-white mb-2">Disponível para Novos Projetos</h3>
               <p className="text-gray-300 text-sm">
-                Currently accepting new clients for Q1 2024
+                Atualmente aceitando novos clientes para o 3º trimestre de 2025
               </p>
             </div>
           </div>
@@ -279,17 +279,17 @@ const Contact = () => {
         <div className="mt-20">
           <div className="bg-gradient-to-r from-blue-600/20 to-teal-600/20 backdrop-blur-sm border border-white/10 rounded-2xl p-12 text-center">
             <h2 className="text-3xl font-bold text-white mb-4">
-              Prefer a Quick Call?
+              Prefere uma conversa rápida?
             </h2>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              Sometimes it's easier to discuss your project over a call. I'm available for 15-minute discovery calls to understand your needs better.
+              Às vezes é mais fácil discutir seu projeto numa conversa rápida. Sinta-se à vontade para me chamar a qualquer momento!
             </p>
             <a 
-              href="tel:+15551234567"
+              href="tel:+5562995388504"
               className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 inline-flex items-center"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Schedule a Call
+              Agende uma conversa!
             </a>
           </div>
         </div>

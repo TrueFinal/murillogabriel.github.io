@@ -9,7 +9,7 @@ const About = () => {
     },
     {
       category: 'Automação',
-      items: ['WhatsApp API', 'Zapier', 'Integromat', 'Python', 'JavaScript']
+      items: ['WhatsApp API', 'Python', 'JavaScript']
     },
     {
       category: 'Ferramentas & Tecnologias',
@@ -55,7 +55,7 @@ const About = () => {
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
               <h2 className="text-2xl font-bold text-white mb-4">Minha Jornada</h2>
               <p className="text-gray-300 leading-relaxed">
-                Com mais de 5 anos de experiência em desenvolvimento web e automação, tenho ajudado empresas a 
+                Com mais de 3 anos de experiência em desenvolvimento web e automação, tenho ajudado empresas a 
                 transformar suas operações através de soluções tecnológicas inovadoras. Minha especialidade está 
                 em criar sistemas que não apenas resolvem problemas, mas também impulsionam o crescimento dos negócios.
               </p>
