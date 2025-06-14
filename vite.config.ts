@@ -14,7 +14,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: './src/main.tsx'
+        main: './index.html'
       }
     }
   }
