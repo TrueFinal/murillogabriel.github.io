@@ -7,7 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/murillogabriel.github.io/',
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
