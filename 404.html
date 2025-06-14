@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // If the path is not the root, redirect to the hash route
+      var path = window.location.pathname.replace('/murillogabriel.github.io', '');
+      if (path && path !== '/') {
+        window.location.replace('/murillogabriel.github.io/#' + path + window.location.search + window.location.hash);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Redirecting...</h1>
+  </body>
+</html> 
